@@ -23,10 +23,12 @@ def run_rtp(session: TrafficSession):
 
     # Copy to TrafficStats
     session.stats.tx_packets = rtp_stats.tx_packets
+    session.stats.tx_bytes = rtp_stats.tx_bytes
     session.stats.throughput_kbps = rtp_stats.bitrate_kbps
     session.stats.jitter_ms = rtp_stats.jitter_ms
     session.stats.loss_pct = rtp_stats.loss_pct
     session.stats.lost_packets = rtp_stats.lost_packets
+    session.stats.duration_s = rtp_stats.duration_s
 
     if media_type == "audio":
         from src.traffic.stats.mos import estimate_mos
