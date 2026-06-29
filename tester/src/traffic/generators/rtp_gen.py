@@ -16,8 +16,8 @@ def run_rtp(session: TrafficSession):
 
     rtp_stats = RtpStreamStats()
     send_rtp_stream(
-        src_ip=session.src_ip, dst_ip=session.dst_ip,
-        dst_port=session.dst_port, duration=session.duration,
+        local_ip=session.src_ip, remote_ip=session.dst_ip,
+        remote_port=session.dst_port, duration_s=session.duration,
         local_port=session.src_port, stats=rtp_stats,
         tun_device=session.tun_device, media_type=media_type)
 

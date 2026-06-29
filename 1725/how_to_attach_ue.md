@@ -379,3 +379,14 @@ The line `SM Policy Association created` is the PCF applying the first policy.
 ---
 
 *Saved in mmt-studio-5g6g/1725/ — Summer Capstone 2026*
+
+
+
+```
+how to create a pdu-session::
+
+curl -X POST http://localhost:5001/api/ues/001011234560001/pdu-session \
+  -H "Content-Type: application/json" \
+  -d '{"dnn": "internet", "sst": 1, "psi": 1}'
+
+```
